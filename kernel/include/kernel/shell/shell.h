@@ -2,9 +2,7 @@
 #define KERNEL_SHELL_SHELL_H
 
 /*
- * Простой интерактивный терминал.
- * Prompt, echo ввода, Backspace, Enter.
- * Команды пока не выполняются — только набор строки в shell_line.
+ * Интерактивный shell: prompt, echo, команды help / mem / pfault.
  */
 void shell_run(void);
 

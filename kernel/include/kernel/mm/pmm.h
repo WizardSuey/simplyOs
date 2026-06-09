@@ -6,8 +6,10 @@
 
 #define PMM_PAGE_SIZE 4096
 
+/* Инициализация bitmap по карте Multiboot (вызывать после multiboot_early_init). */
 void pmm_init(void);
 
+/* Выделить / вернуть один физический фрейм 4 KiB. */
 void* pmm_alloc_frame(void);
 void pmm_free_frame(void* frame);
 

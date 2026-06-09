@@ -1,8 +1,13 @@
 #include <kernel/interrupts/isr.h>
+#include <kernel/mm/page_fault.h>
 #include <kernel/tty.h>
 #include "../../../kernel/arch/i386/vga.h"
 
 void exception_handler(registers_t* regs) {
+    if (regs->int_no == 14) {
+        page_fault_handler(regs);
+    }
+
     terminal_setcolor(vga_entry_color(VGA_COLOR_LIGHT_RED, VGA_COLOR_BLACK));
     terminal_writestring("EXCEPTION! ");
     

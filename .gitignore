@@ -1,3 +1,9 @@
-*.iso
-isodir
-sysroot
+disk.img
+.disk_part.img
+sysroot/
+isodir/
+myos.iso
+*.o
+*.d
+*.a
+serial.log

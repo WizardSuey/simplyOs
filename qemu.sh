@@ -2,4 +2,8 @@
 set -e
 . ./iso.sh
 
-qemu-system-$(./target-triplet-to-arch.sh $HOST) -serial file:serial.log -cdrom myos.iso
+if [ ! -f disk.img ]; then
+	./disk.sh
+fi
+
+qemu-system-$(./target-triplet-to-arch.sh $HOST) -serial file:serial.log -cdrom myos.iso -hda disk.img
